@@ -1,0 +1,64 @@
+@import url('https://fonts.cdnfonts.com/css/ropa-sans-2');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.24);
+  background-color: rgb(88, 88, 88);
+}
+
+.header-image {
+  height: 40rem;
+  background-image: url(./assets/header-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-text {
+  padding-top: 9%;
+  padding-left: 3%;
+  align-items: center;
+  color: rgba(255, 214, 0, 1);
+  font-size: 70px;
+  letter-spacing: 0.1rem;
+}
+
+section {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(16, 59, 45);
+}
+
+.box {
+  border-radius: 0.5rem;
+  width: 40rem;
+  height: 50rem;
+  background-color: rgb(62, 62, 90);
+}
+
+h2,h1 {
+  font-size: 40px;
+  color: rgba(255, 214, 0, 1);
+}
+
+#buttons-container {
+position: absolute;
+bottom: 0;
+}
+
+
+
+p {
+
+    padding: 1rem;
+    border: solid rgb(43, 43, 43);
+    font-size: 24px;
+    color: white;
+}
