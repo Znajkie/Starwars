@@ -2,19 +2,21 @@ const charactersEl = document.getElementById('characters');
 const prev = document.getElementById('prev-button');
 const next = document.getElementById('next-button');
 const details = document.getElementById('details');
+const loader = document.querySelector(".loader")
+
 const getCharacters = (url = 'https://swapi.dev/api/people') => {
   const loaderEl = document.createElement('div');
-  loaderEl.innerText = 'Loading';
-  charactersEl.append(loaderEl);
-const header = document.createElement('h1');
-header.textContent = 'Details';
+  //loaderEl.innerText = 'Loading';
+  // charactersEl.append(loaderEl);
+const header = document.createElement('h1'); //
+header.textContent = 'Details'; //
 details.append(header)
 
   fetch(url)
     .then((response) => response.json())
     .then((responseJson) => {
       charactersEl.innerText = '';
-
+      loader.classList.add('loader-hidden');
       responseJson.results.forEach((character) => {
         const characterEl = document.createElement('p');
 
@@ -40,14 +42,17 @@ details.append(header)
       });
 
       prev.addEventListener('click', () => {
+        loader.classList.remove('loader-hidden'); //
         charactersEl.innerText = '';
         details.innerText = '';
         getCharacters(responseJson.previous);
       });
       next.addEventListener('click', () => {
+        loader.classList.remove('loader-hidden'); //
         charactersEl.innerText = '';
         details.innerText = '';
         getCharacters(responseJson.next);
+        
       });
 
       if (responseJson.previous) {
