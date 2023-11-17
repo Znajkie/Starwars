@@ -15,16 +15,18 @@ body {
 }
 
 .header-image {
-  height: 40rem;
+  display: flex;
+  height: 23.4rem;
   background-image: url(./assets/header-background.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: 0;
 }
 
-.header-text {
-  padding-top: 9%;
-  padding-left: 3%;
+h1 {
+  display: flex;
   align-items: center;
+  margin-left: 3rem;
   color: rgba(255, 214, 0, 1);
   font-size: 70px;
   letter-spacing: 0.1rem;
@@ -37,13 +39,14 @@ section {
 }
 
 .box {
+  margin-top: 4rem;
   border-radius: 0.5rem;
   width: 40rem;
   height: 50rem;
-  background-color: rgb(62, 62, 90);
+  background-color: rgba(62, 62, 90, 0.275);
 }
 
-h2,h1 {
+h2 {
   font-size: 40px;
   color: rgba(255, 214, 0, 1);
 }
@@ -61,4 +64,41 @@ p {
     border: solid rgb(43, 43, 43);
     font-size: 24px;
     color: white;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  width: 10dvw;
+  height: 10dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+content:"";
+width: 75px;
+height: 75px;
+border: 15px solid grey;
+border-radius: 50%;
+border-top-color: greenyellow;
+animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to{
+    transform: rotate(1turn);
+  }
 }
